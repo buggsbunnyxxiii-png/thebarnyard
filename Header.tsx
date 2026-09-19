@@ -96,7 +96,7 @@ export function Nav() {
                 </button>
                 <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 bg-paper p-4 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
                   {item.items.map((sub) => (
-                    <a key={sub} href="#" className="block px-3 py-2 text-sm text-ink/80 hover:bg-ink/5 hover:text-ink">
+                    <a key={sub} href={"/" + sub.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")} className="block px-3 py-2 text-sm text-ink/80 hover:bg-ink/5 hover:text-ink">
                       {sub}
                     </a>
                   ))}

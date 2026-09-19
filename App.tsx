@@ -3,6 +3,7 @@ import { Hero, Manifesto, Nav } from "./sections/Header";
 import { Homes, Performance, Process } from "./sections/Middle";
 import { Contact, Footer, Quote, Studio } from "./sections/Bottom";
 import { AboutMigration, CollectionsMigration, ProjectsMigration, ProcessMigration, ContactMigration } from "./sections/Migration";
+import PageRouter from "./pages";
 
 /** The book's running head — a vertical index pinned to the left margin. */
 function RunningIndex() {
@@ -44,6 +45,7 @@ export default function App() {
       <Nav />
       <RunningIndex />
       <main>
+        {window.location.pathname !== "/" ? <PageRouter /> : <>
         <Hero />
         <Manifesto />
         <AboutMigration />
@@ -57,6 +59,7 @@ export default function App() {
         <Quote />
         <ContactMigration />
         <Contact />
+        </>}
       </main>
       <Footer />
     </div>
